@@ -114,16 +114,16 @@ function calcBhaskara(){
     dis = (b ** 2) - 4 * a * c
 
     if (dis < 0) {
-        x1.innerHTML = 'Não existem raízes reais';
+        x1.innerHTML = 'Não existem raízes reais | Delta: ' + dis;
     }else if (dis === 0) {
         let x = -b / (2 * a);
         localStorage.setItem("x1", x)
-        x1.innerHTML = `Existe apenas uma raiz real: ${x}`;
+        x1.innerHTML = `Existe apenas uma raiz real: ${x} | Delta: ${dis}`;
     } else{
         
         let x1Value = ((-b + Math.sqrt(dis)) / (2 * a)).toFixed(2);
         let x2Value = ((-b - Math.sqrt(dis)) / (2 * a)).toFixed(2);
-        let ret = `Existem duas raízes reais: ${x1Value} e ${x2Value}`
+        let ret = `Existem duas raízes reais: ${x1Value} e ${x2Value} | Delta: ${dis}`;
         localStorage.setItem("x1", ret)
         x1.innerHTML = ret;
     }
