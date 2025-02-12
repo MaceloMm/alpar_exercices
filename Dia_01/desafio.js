@@ -50,15 +50,15 @@ function calcImposto() {
     let icsmsValor = descValor * (imposto / 100);
 
     localStorage.setItem("descValor", descValor.toFixed(2));
-    localStorage.setItem("icsmsValor", icsmsValor.toFixed(2));
-    localStorage.setItem("totalProd", ((descValor + icsmsValor) + frete[estado]).toFixed(2));
+    localStorage.setItem("icsmsValor", `${icsmsValor.toFixed(2)} | Imposto: ${imposto}%`);
+    localStorage.setItem("totalProd", ((descValor - icsmsValor) + frete[estado]).toFixed(2));
 
     const result_desc = document.getElementById("result_desc");
     result_desc.innerHTML = `${descValor.toFixed(2)}`;
     const result_icms = document.getElementById("result_icms");
-    result_icms.innerHTML = `${icsmsValor.toFixed(2)}`;
+    result_icms.innerHTML = `${icsmsValor.toFixed(2)} | Imposto: ${imposto}%`;
     const total_prod = document.getElementById("total_prod");
-    total_prod.innerHTML = `${((descValor + icsmsValor) + frete[estado]).toFixed(2)}`;
+    total_prod.innerHTML = `${((descValor - icsmsValor) + frete[estado]).toFixed(2)}`;
 }
 
 function loadValues() {
