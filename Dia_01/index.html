@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de ICMS</title>
+    <script src="desafio.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <div class="content1 press" id="calc_imp" onclick="alterationApp()">Calculadora de Imposto</div>
+            <div class="content1" id="calc_bhas" onclick="alterationApp()">Calcular Bhaskara</div>
+        </header>
+
+        <div id="content">
+            <form action="">
+                <h2>Calculo:</h2>
+                <label for="prodValue">Valor do produto: </label>
+                <input type="number" id="prodValue">
+                <div>
+                    <input type="checkbox" id="descProd">
+                    <label for="descProd">Desconto</label>
+                </div>
+                <button onclick="calcImposto()">Calcular</button>
+            </form>
+            <div class="result">
+                <h2>Resultado:</h2> 
+                <div class="camps">
+                    <p>Valor do Produto com desconto: </p>
+                    <p id="result_desc"></p>
+                </div>
+                <div class="camps">
+                    <p>Valor do Produto com ICMS: </p>
+                    <p id="result_icms"></p>
+                </div>
+                <div class="camps">
+                    <p>Valor do Produto com descontos: </p>
+                    <p id="total_prod"></p>
+                </div> 
+            </div>
+        </div>
+
+        <div id="content-hide" class="hidden">
+            <form action="" style="height: 75%;">
+                <h2 style="margin-bottom: 30px !important;">Calculo:</h2>
+                <label for="a">Valor de A: </label>
+                <input type="number" id="a">
+                <label for="b">Valor de B: </label>
+                <input type="number" id="b">
+                <label for="c">Valor de C: </label>
+                <input type="number" id="c">
+                <button type="submit" onclick="calcBhaskara()" id="submitBhaskara">Calcular</button>
+            </form>
+            <div class="result" style="height: 75%;">
+                <h2>Resultado:</h2>
+                <div class="camps">
+                    <p>Valor de X1: </p>
+                    <p id="x1"></p>
+                </div>
+                <div class="camps">
+                    <p>Valor de X2: </p>
+                    <p id="x2"></p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Desenvolvido por: <a href="https://github.com/macelomm" target="_blank">Macelo augusto lopes de matos</a>
+        </footer>
+    </div>
+</body>
+</html>
