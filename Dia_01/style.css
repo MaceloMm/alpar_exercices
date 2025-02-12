@@ -176,3 +176,25 @@ a:hover{
 #result{
     color: #333333;
 }
+
+#options{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+
+    op{
+        display: flex;
+        flex-direction: row;
+    }
+
+    label{
+        margin-right: 20px;
+    }
+
+    input{
+        width: 50px !important;
+    }
+}
