@@ -18,21 +18,27 @@ c) Se existe apenas uma raiz real, e informar essa raiz;
 d) Se existem duas raízes reais, e as informar
 */
 
-let a = 1 ? a === 0 : console.log('A variável "a" não pode ser zero');
+let a = 1;
 let b = -5;
 let c = 6;
 
-dis = (b ** 2) - 4 * a * c
+let calc = a === 0 ? false : true;
 
-if (dis < 0) {
-    console.log('Não existem raízes reais');
-    return;
-}else if (dis === 0) {
-    let x = -b / (2 * a);
-    console.log('Existe apenas uma raiz real:', x);
-    return;
+const dis = (b ** 2) - 4 * a * c;
+
+if (calc){
+    if (dis < 0) {
+        console.log('Não existem raízes reais');
+        return;
+    }else if (dis === 0) {
+        let x = -b / (2 * a);
+        console.log('Existe apenas uma raiz real:', x);
+        return;
+    }else{
+        let x1 = (-b + Math.sqrt(dis)) / (2 * a);
+        let x2 = (-b - Math.sqrt(dis)) / (2 * a);
+        console.log('Existem duas raízes reais:', x1, x2);
+    }
 }else{
-    let x1 = (-b + Math.sqrt(dis)) / (2 * a);
-    let x2 = (-b - Math.sqrt(dis)) / (2 * a);
-    console.log('Existem duas raízes reais:', x1, x2);
+    console.log("'A' não pode ser 0!")
 }
